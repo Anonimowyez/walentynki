@@ -92,7 +92,7 @@ function startMiniGame(){
 function resetMiniGame(){ startMiniGame(); document.getElementById("gameMessage").innerText=""; }
 
 // Miś GIF
-const bearImages=["img/bear1.gif","img/bear2.gif"];
+const bearImages=["bear1.gif","bear2.gif"];
 let bearIndex=0;
 function yesClicked(){
   bearIndex=(bearIndex+1)%bearImages.length;
@@ -127,3 +127,4 @@ function hearts(){
     setTimeout(()=>h.remove(),6000);
   },400);
 }
+
