@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Dla Oliwii ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<!-- Startowa -->
+<section id="intro" class="screen active">
+  <div class="intro-card">
+    <h1>Dla Oliwii ❤️</h1>
+    <p>Ta strona jest tylko dla Ciebie.</p>
+    <button onclick="enterSite()">Dla Ciebie</button>
+  </div>
+</section>
+
+<!-- Główna -->
+<section id="main" class="screen">
+  <div class="grid">
+
+    <!-- Lewy górny: Tarot -->
+    <div class="box tarot">
+      <h3>🔮 Karty tarota</h3>
+      <div class="tarot-row">
+        <div class="tarot-card" onclick="flipCard(this)">
+          <div class="card-front">Karta</div>
+          <div class="card-back">💖</div>
+        </div>
+        <div class="tarot-card" onclick="flipCard(this)">
+          <div class="card-front">Karta</div>
+          <div class="card-back">💖</div>
+        </div>
+        <div class="tarot-card" onclick="flipCard(this)">
+          <div class="card-front">Karta</div>
+          <div class="card-back">💖</div>
+        </div>
+      </div>
+      <button onclick="drawCards()">Losuj karty</button>
+    </div>
+
+    <!-- Prawy górny: Mini-gra -->
+    <div class="box mini-game">
+      <h3>💌 Mini-gra</h3>
+      <div id="gameArea"></div>
+      <p id="gameMessage"></p>
+      <button id="resetGameBtn" onclick="resetMiniGame()">Reset Mini-Gra</button>
+    </div>
+
+    <!-- Lewy dolny: Miś GIF -->
+    <div class="box media">
+      <h3>💖 Miś Walentynkowy</h3>
+      <div class="bear-container">
+        <img src="img/bear1.gif" alt="Miś Walentynkowy" class="bear">
+        <p class="valentine-text">Will you be my Valentine?</p>
+        <div class="buttons">
+          <button onclick="yesClicked()">Yes</button>
+          <button id="noBtn" onclick="noClicked()">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prawy dolny: Sekret -->
+    <div class="box secret">
+      <h3>💌 Sekret</h3>
+      <p class="secret-text fancy">✨ Kliknij Sekret aby dostać niespodziankę 💖 ✨</p>
+      <button id="showSecretBtn" onclick="showPasswordInput()">Sekret</button>
+      <div id="passwordContainer">
+        <p>Podaj hasło, aby odsłonić zawartość:</p>
+        <input type="password" id="password" placeholder="Wpisz hasło">
+        <button onclick="unlockSecret()">Otwórz</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Strona sekretu -->
+<section id="secretPage" class="screen">
+  <div class="secret-content">
+    <p class="final">
+      <em><h3>Nic dwa razy</h3>
+
+Nic dwa razy się nie zdarza </br>
+i nie zdarzy. Z tej przyczyny </br>
+zrodziliśmy się bez wprawy</br>
+i pomrzemy bez rutyny.</br>
+
+Choćbyśmy uczniami byli</br>
+najlepszymi w szkole świata,</br>
+nie będziemy repetować</br>
+żadnej zimy ani lata.</br>
+
+Żaden dzień się nie powtórzy,</br>
+nie ma dwóch podobnych nocy,</br>
+dwóch tych samych pocałunków,</br>
+dwóch jednakich spojrzeń w oczy.</br>
+
+Wczoraj, kiedy twoje imię</br>
+ktoś wymówił przez mnie głośno,</br>
+tak mi było, jakby róża</br>
+przez otwarte wpadła okno.</br>
+
+Dziś, kiedy jesteśmy razem,</br>
+odwróciłam twarz ku ścianie.</br>
+Róża? Jak wygląda róża?</br>
+Czy to kwiat? A może kamień?</br>
+
+Czemu ty się, zła godzino,</br>
+z niepotrzebnym mieszasz lękiem?</br>
+Jesteś – a więc musisz minąć.</br>
+Miniesz – a więc to jest piękne.</br>
+
+Uśmiechnięci, wpółobjęci</br>
+spróbujemy szukać zgody,</br>
+choć różnimy się od siebie</br>
+jak dwie krople czystej wody.</em>
+    </p>
+    <div class="photos-scroll">
+      <div class="photos">
+        <img src="img/1.jpg">
+        <img src="img/2.jpg">
+        <img src="img/3.jpg">
+      </div>
+    </div>
+    <button onclick="backToMain()">⬅️ Powrót</button>
+  </div>
+</section>
+
+<audio id="player"></audio>
+<script src="script.js"></script>
+</body>
+</html>

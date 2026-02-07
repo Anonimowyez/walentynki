@@ -1,0 +1,83 @@
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#ff5f8d,#ffc3a0);color:#333;height:100vh;overflow: hidden;}
+
+.screen{display:none;width:100%;height:100%;}
+.screen.active{display:flex;justify-content:center;align-items:center;flex-direction:column;}
+.intro-card{background:white;padding:40px;border-radius:30px;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.25);}
+.intro-card h1{color:#ff3366;font-size:42px;margin-bottom:10px;}
+button{background:linear-gradient(135deg,#ff3366,#ff5f8d);border:none;color:white;padding:14px 28px;border-radius:30px;font-size:16px;cursor:pointer;}
+button:hover{transform:translateY(-2px);}
+
+/* 2x2 grid */
+.grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:20px;width:95%;height:95%;margin:auto;}
+.box{background:white;border-radius:20px;padding:15px;box-shadow:0 15px 30px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;}
+
+/* Tarot */
+.tarot-row{display:flex;justify-content:center;margin-top:10px;gap:20px;} 
+.tarot-card{width:120px;height:180px;background:#ffc0cb;color:#fff;border-radius:15px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;perspective:1000px;position:relative;box-shadow:0 5px 20px rgba(0,0,0,0.3);}
+.card-front,.card-back{position:absolute;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:15px;backface-visibility:hidden;font-weight:bold;}
+.card-back{transform:rotateY(180deg);background:#fff0f5;color:#ff3366;}
+.tarot-card.flipped .card-front{transform:rotateY(180deg);}
+.tarot-card.flipped .card-back{transform:rotateY(0deg);}
+.tarot button{margin-top:auto;}
+
+/* Mini gra */
+.mini-game{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  background:white;
+  border-radius:15px;
+  padding:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  border:3px solid #ff3366;
+  height:100%;
+  width:100%;
+}
+.mini-game h3{margin:0 0 10px 0;color:#ff3366;font-weight:bold;}
+#gameArea{width:90%;height:65%;background:#fff0f5;border-radius:10px;border:2px dashed #ff3366;position:relative;overflow:hidden;margin-bottom:10px;}
+#gameMessage{width:90%;min-height:40px;background:linear-gradient(135deg,#ff3366,#ff5f8d);color:white;text-align:center;font-weight:bold;border-radius:20px;padding:8px;opacity:0.95;}
+#resetGameBtn{background:linear-gradient(135deg,#ff3366,#ff5f8d);border:none;color:white;padding:6px 14px;border-radius:20px;font-size:14px;cursor:pointer;margin-top:5px;}
+#resetGameBtn:hover{transform:scale(1.05);}
+.mini-heart{position:absolute;font-size:20px;cursor:pointer;transition:0.3s;}
+
+/* Miś */
+.bear-container{display:flex;flex-direction:column;align-items:center;}
+.bear{width:140px;margin-bottom:10px;transition:0.3s;}
+.valentine-text{font-size:18px;margin-bottom:10px;color:#ff3366;font-weight:bold;text-align:center;}
+.buttons button{margin:5px;padding:10px 20px;border-radius:25px;}
+.puff{animation:puff 0.6s forwards;}
+@keyframes puff{0%{opacity:1;transform:scale(1);}100%{opacity:0;transform:scale(0) rotate(20deg);}}
+
+/* Sekret */
+.secret-text.fancy{
+  font-size:16px;
+  font-weight:bold;
+  color:#ff3366;
+  text-align:center;
+  background:linear-gradient(45deg,#ff9ccf,#ffc3a0);
+  padding:10px 15px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(255,51,102,0.6);
+  margin-bottom:10px;
+}
+#showSecretBtn{background:linear-gradient(135deg,#ff3366,#ff5f8d);border:none;color:white;padding:12px 24px;border-radius:25px;font-weight:bold;cursor:pointer;transition:0.3s;}
+#showSecretBtn:hover{transform:scale(1.05);}
+#passwordContainer{margin-top:15px;display:none;flex-direction:column;align-items:center;width:80%;}
+#passwordContainer p{color:#ff3366;font-weight:bold;margin-bottom:8px;text-align:center;}
+#passwordContainer input{padding:10px 15px;border-radius:20px;border:2px solid #ff3366;width:70%;text-align:center;margin-bottom:10px;font-size:16px;}
+#passwordContainer button{background:linear-gradient(135deg,#ff3366,#ff5f8d);border:none;color:white;padding:10px 20px;border-radius:25px;cursor:pointer;font-weight:bold;}
+#passwordContainer button:hover{transform:scale(1.05);}
+
+/* Strona sekretu */
+.secret-content{display:flex;flex-direction:column;align-items:center;padding:20px;height: 100vh;       /* <-- to ogranicza wysokość */
+overflow: auto;}
+.photos-scroll{max-height:70vh;width:100%;display:flex;justify-content:center;}
+.photos img{width:80%;max-width:600px;border-radius:15px;margin:10px 0;}
+.final{margin-bottom:15px;font-size:16px;color:#ff3366;text-align:center;}
+
+/* Serduszka w tle */
+#hearts{position:absolute;inset:0;pointer-events:none;}
+.heart{position:absolute;font-size:20px;animation:float 6s linear forwards;}
+@keyframes float{from{transform:translateY(100vh);opacity:1;}to{transform:translateY(-10vh);opacity:0;}}
